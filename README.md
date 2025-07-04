@@ -1,4 +1,4 @@
-# 🌤️ WeatherNews
+# 🌤️ WetOrNot
 
 A simple command-line tool to get weather information for any city around the world.
 
@@ -6,31 +6,31 @@ A simple command-line tool to get weather information for any city around the wo
 
 ```bash
 # Using vlx (recommended)
-vlx weathernews "New York"
-vlx weathernews London
-vlx weathernews Tokyo
+vlx wetornot "New York"
+vlx wetornot London
+vlx wetornot Tokyo
 ```
 
 ## 📦 Installation
 
 ### Option 1: Use directly with vlx (No installation required)
 ```bash
-vlx weathernews <city>
+vlx wetornot <city>
 ```
 
 ### Option 2: Install globally
 ```bash
-vlt install -g weathernews
-weathernews <city>
+vlt install -g wetornot
+wetornot <city>
 ```
 
 ### Option 3: Clone and use locally
 ```bash
 git clone <repository-url>
-cd weathernews
+cd wetornot
 vlt install
 vlt link  # Makes it available globally
-weathernews <city>
+wetornot <city>
 ```
 
 ## 🚀 No Setup Required!
@@ -48,23 +48,23 @@ Data provided by [Open-Meteo.com](https://open-meteo.com) - an open-source weath
 
 ```bash
 # Single word cities
-weathernews London
-weathernews Tokyo
-weathernews Paris
+wetornot London
+wetornot Tokyo
+wetornot Paris
 
 # Cities with spaces (use quotes)
-weathernews "New York"
-weathernews "Los Angeles"
-weathernews "San Francisco"
+wetornot "New York"
+wetornot "Los Angeles"
+wetornot "San Francisco"
 
 # International cities
-weathernews Mumbai
-weathernews "São Paulo"
-weathernews Berlin
+wetornot Mumbai
+wetornot "São Paulo"
+wetornot Berlin
 
 # Get help
-weathernews --help
-weathernews -h
+wetornot --help
+wetornot -h
 ```
 
 ## 📊 Sample Output
