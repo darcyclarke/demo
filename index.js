@@ -19,6 +19,11 @@ Examples:
   npx weatherin London
   npx weatherin Tokyo
 
+Features:
+  • Current weather conditions
+  • 7-day weather forecast
+  • Temperature in both Celsius and Fahrenheit
+
 Note: This tool uses Open-Meteo API - completely free with no API key required!
 Data provided by Open-Meteo.com
   `);
@@ -27,6 +32,42 @@ Data provided by Open-Meteo.com
 function formatTemperature(celsius) {
   const fahrenheit = Math.round((celsius * 9/5) + 32);
   return `${Math.round(celsius)}°C (${fahrenheit}°F)`;
+}
+
+function formatDayOfWeek(dateString) {
+  const date = new Date(dateString);
+  const today = new Date();
+  const tomorrow = new Date(today);
+  tomorrow.setDate(today.getDate() + 1);
+  
+  if (date.toDateString() === today.toDateString()) {
+    return 'Today';
+  } else if (date.toDateString() === tomorrow.toDateString()) {
+    return 'Tomorrow';
+  } else {
+    return date.toLocaleDateString('en-US', { weekday: 'long' });
+  }
+}
+
+function formatForecastData(forecastData) {
+  console.log(`
+📅 7-Day Forecast
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
+
+  for (let i = 0; i < 7 && i < forecastData.daily.time.length; i++) {
+    const day = formatDayOfWeek(forecastData.daily.time[i]);
+    const condition = getWeatherCondition(forecastData.daily.weather_code[i]);
+    const maxTemp = formatTemperature(forecastData.daily.temperature_2m_max[i]);
+    const minTemp = formatTemperature(forecastData.daily.temperature_2m_min[i]);
+    const precipitation = forecastData.daily.precipitation_sum[i] || 0;
+    const windSpeed = Math.round(forecastData.daily.wind_speed_10m_max[i]);
+    
+    console.log(`
+${condition.emoji} ${day.padEnd(9)} ${condition.description}
+   High: ${maxTemp}  Low: ${minTemp}
+   ${precipitation > 0 ? `💧 Rain: ${precipitation}mm` : '🌞 No rain'}  🌬️  Wind: ${windSpeed} km/h`);
+  }
+  console.log();
 }
 
 function formatWeatherData(locationData, weatherData) {
@@ -44,8 +85,10 @@ function formatWeatherData(locationData, weatherData) {
 🌬️  Wind:        ${current.wind_speed_10m} km/h
 📈 Pressure:     ${current.surface_pressure} hPa
 
-${condition.emoji} ${condition.description}
-  `);
+${condition.emoji} ${condition.description}`);
+
+  // Display 7-day forecast
+  formatForecastData(weatherData);
 }
 
 function getWeatherCondition(weatherCode) {
@@ -109,7 +152,7 @@ Examples: "New York", "London", "Tokyo"
 
     const location = geocodingResponse.data.results[0];
     
-    // Step 2: Get weather data using coordinates
+    // Step 2: Get weather data using coordinates (current + 7-day forecast)
     const weatherResponse = await axios.get(WEATHER_URL, {
       params: {
         latitude: location.latitude,
@@ -123,7 +166,16 @@ Examples: "New York", "London", "Tokyo"
           'wind_speed_10m',
           'wind_direction_10m'
         ].join(','),
-        timezone: 'auto'
+        daily: [
+          'weather_code',
+          'temperature_2m_max',
+          'temperature_2m_min',
+          'precipitation_sum',
+          'wind_speed_10m_max',
+          'wind_direction_10m_dominant'
+        ].join(','),
+        timezone: 'auto',
+        forecast_days: 7
       }
     });
 

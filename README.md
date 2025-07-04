@@ -75,7 +75,7 @@ weatherin -h
 ```
 🔍 Fetching weather data for "London"...
 
-🌍 Weather in London
+🌍 Weather in London, United Kingdom
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 🌡️  Temperature: 15°C (59°F)
@@ -86,14 +86,36 @@ weatherin -h
 📈 Pressure:     1013 hPa
 
 ⛅ Partly cloudy
+
+📅 7-Day Forecast
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+☀️ Today     Clear sky
+   High: 18°C (64°F)  Low: 12°C (54°F)
+   🌞 No rain  🌬️  Wind: 15 km/h
+
+🌤️ Tomorrow  Mainly clear
+   High: 20°C (68°F)  Low: 14°C (57°F)
+   🌞 No rain  🌬️  Wind: 12 km/h
+
+⛅ Wednesday Partly cloudy
+   High: 17°C (63°F)  Low: 11°C (52°F)
+   💧 Rain: 2.1mm  🌬️  Wind: 18 km/h
+
+🌧️ Thursday  Moderate rain
+   High: 15°C (59°F)  Low: 9°C (48°F)
+   💧 Rain: 8.7mm  🌬️  Wind: 22 km/h
 ```
 
 ## 🛠️ Features
 
 - ✅ Works with `npx` and `vlx` - no installation required
 - ✅ Beautiful, colorful command-line output with emojis
+- ✅ **Current weather conditions with detailed information**
+- ✅ **7-day weather forecast with daily high/low temperatures**
+- ✅ **Precipitation and wind information for each day**
 - ✅ Temperature in both Celsius and Fahrenheit
-- ✅ Comprehensive weather data (humidity, wind, pressure, visibility)
+- ✅ Comprehensive weather data (humidity, wind, pressure)
 - ✅ Proper error handling with helpful messages
 - ✅ Support for cities with spaces in names
 - ✅ No API key or registration required
