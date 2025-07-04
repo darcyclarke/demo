@@ -1,0 +1,21 @@
+{
+  "name": "weatherin",
+  "version": "1.0.0",
+  "description": "A CLI tool to get weather information for any city",
+  "main": "index.js",
+  "bin": {
+    "weatherin": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["weather", "cli", "city", "forecast"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+} 

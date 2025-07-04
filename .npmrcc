@@ -1,0 +1,3 @@
+# @local:registry=http://localhost:1337/
+registry=http://localhost:1337/local/
+//localhost:1337/local/:_authToken=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
