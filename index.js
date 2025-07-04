@@ -8,16 +8,16 @@ const WEATHER_URL = 'https://api.open-meteo.com/v1/forecast';
 
 function displayHelp() {
   console.log(`
-🌤️  Weatherin - Get weather information for any city
+🌤️  WeatherNow - Get weather information for any city
 
 Usage:
-  npx weatherin <city>
-  vlx weatherin <city>
+  vlx weathernow <city>
+  weathernow <city>
 
 Examples:
-  npx weatherin "New York"
-  npx weatherin London
-  npx weatherin Tokyo
+  vlx weathernow "New York"
+  vlx weathernow London
+  vlx weathernow Tokyo
 
 Features:
   • Current weather conditions

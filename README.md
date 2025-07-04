@@ -1,39 +1,36 @@
-# 🌤️ Weatherin
+# 🌤️ WeatherNow
 
 A simple command-line tool to get weather information for any city around the world.
 
 ## 🚀 Quick Start
 
 ```bash
-# Using npx (recommended)
-npx weatherin "New York"
-npx weatherin London
-npx weatherin Tokyo
-
-# Using vlx
-vlx weatherin "Los Angeles"
+# Using vlx (recommended)
+vlx weathernow "New York"
+vlx weathernow London
+vlx weathernow Tokyo
 ```
 
 ## 📦 Installation
 
-### Option 1: Use directly with npx (No installation required)
+### Option 1: Use directly with vlx (No installation required)
 ```bash
-npx weatherin <city>
+vlx weathernow <city>
 ```
 
 ### Option 2: Install globally
 ```bash
-npm install -g weatherin
-weatherin <city>
+vlt install -g weathernow
+weathernow <city>
 ```
 
 ### Option 3: Clone and use locally
 ```bash
 git clone <repository-url>
-cd weatherin
-npm install
-npm link  # Makes it available globally
-weatherin <city>
+cd weathernow
+vlt install
+vlt link  # Makes it available globally
+weathernow <city>
 ```
 
 ## 🚀 No Setup Required!
@@ -51,23 +48,23 @@ Data provided by [Open-Meteo.com](https://open-meteo.com) - an open-source weath
 
 ```bash
 # Single word cities
-weatherin London
-weatherin Tokyo
-weatherin Paris
+weathernow London
+weathernow Tokyo
+weathernow Paris
 
 # Cities with spaces (use quotes)
-weatherin "New York"
-weatherin "Los Angeles"
-weatherin "San Francisco"
+weathernow "New York"
+weathernow "Los Angeles"
+weathernow "San Francisco"
 
 # International cities
-weatherin Mumbai
-weatherin "São Paulo"
-weatherin Berlin
+weathernow Mumbai
+weathernow "São Paulo"
+weathernow Berlin
 
 # Get help
-weatherin --help
-weatherin -h
+weathernow --help
+weathernow -h
 ```
 
 ## 📊 Sample Output
@@ -109,7 +106,7 @@ weatherin -h
 
 ## 🛠️ Features
 
-- ✅ Works with `npx` and `vlx` - no installation required
+- ✅ Works with `vlx` - no installation required
 - ✅ Beautiful, colorful command-line output with emojis
 - ✅ **Current weather conditions with detailed information**
 - ✅ **7-day weather forecast with daily high/low temperatures**
