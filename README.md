@@ -1,4 +1,4 @@
-# 🌤️ WeatherNow
+# 🌤️ WeatherNews
 
 A simple command-line tool to get weather information for any city around the world.
 
@@ -6,31 +6,31 @@ A simple command-line tool to get weather information for any city around the wo
 
 ```bash
 # Using vlx (recommended)
-vlx weathernow "New York"
-vlx weathernow London
-vlx weathernow Tokyo
+vlx weathernews "New York"
+vlx weathernews London
+vlx weathernews Tokyo
 ```
 
 ## 📦 Installation
 
 ### Option 1: Use directly with vlx (No installation required)
 ```bash
-vlx weathernow <city>
+vlx weathernews <city>
 ```
 
 ### Option 2: Install globally
 ```bash
-vlt install -g weathernow
-weathernow <city>
+vlt install -g weathernews
+weathernews <city>
 ```
 
 ### Option 3: Clone and use locally
 ```bash
 git clone <repository-url>
-cd weathernow
+cd weathernews
 vlt install
 vlt link  # Makes it available globally
-weathernow <city>
+weathernews <city>
 ```
 
 ## 🚀 No Setup Required!
@@ -48,23 +48,23 @@ Data provided by [Open-Meteo.com](https://open-meteo.com) - an open-source weath
 
 ```bash
 # Single word cities
-weathernow London
-weathernow Tokyo
-weathernow Paris
+weathernews London
+weathernews Tokyo
+weathernews Paris
 
 # Cities with spaces (use quotes)
-weathernow "New York"
-weathernow "Los Angeles"
-weathernow "San Francisco"
+weathernews "New York"
+weathernews "Los Angeles"
+weathernews "San Francisco"
 
 # International cities
-weathernow Mumbai
-weathernow "São Paulo"
-weathernow Berlin
+weathernews Mumbai
+weathernews "São Paulo"
+weathernews Berlin
 
 # Get help
-weathernow --help
-weathernow -h
+weathernews --help
+weathernews -h
 ```
 
 ## 📊 Sample Output

@@ -1,10 +1,10 @@
 {
-  "name": "weathernow",
+  "name": "weathernews",
   "version": "1.0.0",
   "description": "A CLI tool to get weather information for any city",
   "main": "index.js",
   "bin": {
-    "weathernow": "./index.js"
+    "weathernews": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

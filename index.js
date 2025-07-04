@@ -8,16 +8,16 @@ const WEATHER_URL = 'https://api.open-meteo.com/v1/forecast';
 
 function displayHelp() {
   console.log(`
-🌤️  WeatherNow - Get weather information for any city
+🌤️  WeatherNews - Get weather information for any city
 
 Usage:
-  vlx weathernow <city>
-  weathernow <city>
+  vlx weathernews <city>
+  weathernews <city>
 
 Examples:
-  vlx weathernow "New York"
-  vlx weathernow London
-  vlx weathernow Tokyo
+  vlx weathernews "New York"
+  vlx weathernews London
+  vlx weathernews Tokyo
 
 Features:
   • Current weather conditions
