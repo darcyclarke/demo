@@ -70,13 +70,50 @@ ${condition.emoji} ${day.padEnd(9)} ${condition.description}
   console.log();
 }
 
+function formatTimeInfo(timezone) {
+  const now = new Date();
+  const localTime = new Date(now.toLocaleString("en-US", {timeZone: timezone}));
+  const userTime = now;
+  
+  // Calculate time difference in hours
+  const timeDiff = (localTime.getTime() - userTime.getTime()) / (1000 * 60 * 60);
+  const timeDiffHours = Math.round(timeDiff);
+  
+  // Format times
+  const localTimeStr = localTime.toLocaleString('en-US', {
+    weekday: 'short',
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZoneName: 'short'
+  });
+  
+  let diffStr = '';
+  if (timeDiffHours === 0) {
+    diffStr = 'Same as your timezone';
+  } else if (timeDiffHours > 0) {
+    diffStr = `${timeDiffHours} hour${timeDiffHours !== 1 ? 's' : ''} ahead of you`;
+  } else {
+    diffStr = `${Math.abs(timeDiffHours)} hour${Math.abs(timeDiffHours) !== 1 ? 's' : ''} behind you`;
+  }
+  
+  return { localTimeStr, diffStr };
+}
+
 function formatWeatherData(locationData, weatherData) {
   const current = weatherData.current;
   const condition = getWeatherCondition(current.weather_code);
+  const timezone = weatherData.timezone;
+  const timeInfo = formatTimeInfo(timezone);
   
   console.log(`
 🌍 Weather in ${locationData.name}, ${locationData.country}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🕐 Local time:   ${timeInfo.localTimeStr}
+⏰ Time diff:    ${timeInfo.diffStr}
 
 🌡️  Temperature: ${formatTemperature(current.temperature_2m)}
 🌡️  Feels like:  ${formatTemperature(current.apparent_temperature)}
